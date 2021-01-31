@@ -1,0 +1,43 @@
+[{
+  "_id": {
+    "$oid": "60159f1b656e736d557e2af4"
+  },
+  "data": 65,
+  "month": "January"
+},{
+  "_id": {
+    "$oid": "60159f90656e736d557e2af6"
+  },
+  "data": 90,
+  "month": "February"
+},{
+  "_id": {
+    "$oid": "60159fcc656e736d557e2af7"
+  },
+  "data": 80,
+  "month": "March"
+},{
+  "_id": {
+    "$oid": "6015a007656e736d557e2af8"
+  },
+  "data": 81,
+  "month": "April"
+},{
+  "_id": {
+    "$oid": "6015a017656e736d557e2af9"
+  },
+  "data": 56,
+  "month": "May"
+},{
+  "_id": {
+    "$oid": "6015a024656e736d557e2afa"
+  },
+  "data": 55,
+  "month": "June"
+},{
+  "_id": {
+    "$oid": "6015a02f656e736d557e2afb"
+  },
+  "data": 40,
+  "month": "July"
+}]

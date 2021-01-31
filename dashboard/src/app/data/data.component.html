@@ -1,0 +1,102 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 mt-3">
+
+      <table class="table">
+        <thead class="thead-light">
+        <tr>
+          <th>Month</th>
+          <th>Year Sales</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let linedata of line | async">
+            <td>
+              <ng-container *ngIf="lineEdit.indexOf(linedata._id) == -1">
+                {{linedata.month}}
+              </ng-container>
+              <ng-container *ngIf="lineEdit.indexOf(linedata._id) > -1">
+                <input [value]="linedata.month">
+              </ng-container>
+            </td>
+            <td>
+              <ng-container *ngIf="lineEdit.indexOf(linedata._id) == -1">
+                {{linedata.data}}
+              </ng-container>
+              <ng-container *ngIf="lineEdit.indexOf(linedata._id) > -1">
+                <input [value]="linedata.data">
+              </ng-container>
+            </td>
+            <td class="edit">
+              <ng-container *ngIf="lineEdit.indexOf(linedata._id) > -1">
+                <button mat-icon-button>
+                  <mat-icon aria-hidden="false" style="color:green;cursor:pointer;" (click)="editLine(linedata._id)">done</mat-icon>
+                </button>
+                <button mat-icon-button (click)="editLine_remove(linedata._id)">
+                  <mat-icon aria-hidden="false" style="color:red;cursor:pointer;">close</mat-icon>
+                </button>
+              </ng-container>
+              <ng-container *ngIf="lineEdit.indexOf(linedata._id) == -1">
+                <button mat-icon-button (click)="editLine(linedata._id)">
+                  <mat-icon aria-hidden="false" style="color:blue;cursor:pointer;">edit</mat-icon>
+                </button>
+              </ng-container>
+            </td>
+            <td>
+              <button mat-icon-button>
+                <mat-icon aria-hidden="false" style="color:red;cursor:pointer;" (click)="removeLine(linedata._id)">delete</mat-icon>
+              </button>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-sm-6 mt-3">
+      <table class="table">
+        <thead class="thead-light">
+        <tr>
+          <th>Year</th>
+          <th>Series A</th>
+          <th>Series B</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let bardata of bar | async">
+            <td>{{bardata.year}}</td>
+            <td>{{bardata.data1}}</td>
+            <td>{{bardata.data2}}</td>
+            <td><mat-icon aria-hidden="false" style="color:blue;cursor:pointer;">edit</mat-icon></td>
+            <td><mat-icon aria-hidden="false" style="color:red;cursor:pointer;" (click)="removeBar(bardata._id)">delete</mat-icon></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-sm-6 mt-3">
+      <table class="table">
+        <thead class="thead-light">
+        <tr>
+          <th>Quarter</th>
+          <th>Data</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let piedata of pie | async">
+            <td>{{piedata.quarter}}</td>
+            <td>{{piedata.data}}</td>
+            <td><mat-icon aria-hidden="false" style="color:blue;cursor:pointer;">edit</mat-icon></td>
+            <td><mat-icon aria-hidden="false" style="color:red;cursor:pointer;" (click)="removePie(piedata._id)">delete</mat-icon></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
